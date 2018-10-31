@@ -1,0 +1,87 @@
+{{ define "main" }}
+
+    <div class="parallax-container">
+        <div class="parallax">
+            {{ with .Params.Image }}
+                <img style="width:100%;" src="{{ . | absURL }}">
+            {{ else }}
+                <div class="parallaximage" style="height:100%;"></div>
+            {{ end }}
+    
+        </div>
+    </div> 
+
+    <div class="container raised-box" style="margin-top:-50px">
+        <div class="store">
+            <div class="row">
+                <div class="col s9" style="padding-right:20px;">
+                    <div class="posts-container" >             
+                        {{ $taxo := "categories" }}                  
+                        {{ range .Param $taxo }}
+                            {{ $name := . }}
+                            {{ with $.Site.GetPage (printf "/%s/%s" $taxo $name) }}
+                            <a class="categoriesText" href="{{ .Permalink }}">
+                                {{$name}}
+                            </a>
+                            {{ end }}
+                        {{ end }}
+                        <h3 style="margin-top:5px;">
+                            <strong>{{.Title}}</strong>
+                        </h3>
+                        <p class="grey-text" style="margin-bottom: 0;"><i class="material-icons tiny">brush</i> {{.Params.Author}} &ensp; <span class="grey-text text-darken-2">{{ dateFormat "January 2 2006" .Params.Date}}</span></p>   
+                              
+                        </p>
+                        <div class="divider"></div>               
+                        
+                        <p class="flow-text">
+                            {{.Content}}
+                        </p>
+                        {{/*  <p class="grey-text">By {{.Params.Author}} on {{ dateFormat "January 2 2006" .Params.Date}}</p>  */}}
+                        <div class="row" style="margin-left:0;">
+                                <p style="float: left;">Tags:{{ $taxo := "tags" }} <!-- Use the plural form here -->
+                                    {{ range .Param $taxo }}
+                                        {{ $name := . }}
+                                        {{ with $.Site.GetPage (printf "/%s/%s" $taxo $name) }}
+                                        <a href="{{ .Permalink }}">
+                                            <span class="badge new grey darken-3 tagSpan" style="" data-badge-caption="{{$name}}">
+                                            </span>
+                                        </a>
+                                        {{ end }}
+                                    {{ end }}
+                            </div>
+                        <div class="divider"></div>
+                        <h6><strong>Other Recent Posts:</strong></h6>
+                        <div class="row" style="height: 180px; overflow:hidden">
+                            {{ range first 4 .Site.Pages }}
+                                <div class="col s12 m6 l4 xl3">
+                                    <div style="height:50px;">
+                                        <p style="font-size: 14px; font-weight: 700; margin-bottom: 0px;">{{ .Title }}</p>
+                                        <p class="grey-text lighten-2" style="margin-top: 0; font-size: 12px;">
+                                            {{ .Params.Author}}
+                                        </p>
+                                        
+        
+                                    </div>
+                                    <div class="shortCardImg">
+                                    <a href="{{ .Permalink }}">
+                                    {{ with .Params.Image }}
+                                        <img src="{{ . | absURL }}" alt="" style="">
+                                    {{else}}
+                                        <div style="width:100%; height:100%;" class="libre-blue"></div>
+                                    {{end}}
+                                    </a>        
+                                    </div>
+                                </div>
+                            {{ end }}
+                        </div>
+                    </div>
+                </div>
+                <div class="col s3">
+                    {{- partial "infobar.html" . -}}
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <div style="height:60px;"></div>
+{{end}}

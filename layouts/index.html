@@ -1,0 +1,58 @@
+{{ define "main" }}
+
+<div class="carousel carousel-slider center" data-indicators="true" style="">
+    <script>
+        $(document).ready(function(){
+            $('.carousel').carousel();
+
+            setInterval(function(){
+                $('.carousel').carousel("next");
+            }, 3000);
+        });
+    </script>
+    {{ range .Site.Data.carousel }}
+    <div class="carousel-item center libre-blue">
+        <div class="container" style=>
+            <div class="row" style="padding:30px;margin-bottom: 40px;">
+                <div class="col s12 m7 " style="">
+                    <div style="padding-left:5%; margin: auto 0">
+                        <h3 style="font-weight:600; padding-top:0; letter-spacing: 1.5px; color: white;">{{.title}}</h1>
+                        <p style="font-weight:600; color: white;">{{ .description | safeHTML }}</p>            
+                    </div>
+                </div>
+                <div class="col s12 m5">
+                    <img src="{{.image}}" style="width:100%; height:auto;">
+                </div>
+            </div>
+        </div>
+    </div>
+    {{ end }}
+</div>
+
+
+    
+          
+<div class="container" style="">
+    <h3 style="padding-left:0.5%">Recent Posts</h3>
+    <div class="divider"></div>
+    <div class="row">
+        <br>
+        <div class="col s12 m10" style="padding-right:20px;">
+            <div class="posts-container" >                
+                {{ range first 5 .Pages }}
+            
+                    {{- partial "cardcomponent.html" . -}}
+                    
+                {{end}}
+            </div>
+        </div>
+        <div class="col hide-on-small-only m2">
+            {{- partial "infobar.html" . -}}
+        </div>
+    </div>
+        
+</div>
+
+
+    
+{{ end }}

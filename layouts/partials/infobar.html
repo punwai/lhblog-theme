@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="infoSection">
+        <h6 style="">Tags</h6>
+    </div>
+    <div class="divider"></div>
+    <div class="infoSection">
+        <ul id="all-tags">
+                {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+                    {{ with $.Site.GetPage (printf "/tags/%s" $name) }}
+                        <li>               <a href="{{ .Permalink }}">{{ $name }}</a>
+                        </li>
+                    {{ end }}
+                {{ end }}
+        </ul>
+    </div>
+    <div class="infoSection">
+        <h6>Categories</h6>
+    </div>
+    <div class="divider"></div>
+
+    <div class="infoSection">
+        <ul id="all-tags">
+            {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
+                {{ with $.Site.GetPage (printf "/categories/%s" $name) }}
+                    <li>               <a href="{{ .Permalink }}">{{ $name }}</a>
+                    </li>
+                {{ end }}
+            {{ end }}
+        </ul>
+    </div>
+</div>
+    {{/*  {{ range .Pages 5}}
+        {{}}
+    {{ end }}  */}}
+</div>

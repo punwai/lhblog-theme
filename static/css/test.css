@@ -1,0 +1,210 @@
+
+span.customTag{
+    margin-left: 0;
+    margin-right:5px;
+    margin-bottom: 4px;
+    float: left;
+    border-radius: 5px !important;
+
+}
+.libre-orange{
+    background: rgb(246,144,50) !important;
+}
+.libre-orange-border{
+    border-color: rgb(246,144,50) !important;
+}
+.libre-blue{
+    background: rgb(56, 167, 187) !important;
+}
+.libre-blue-border{
+    border-color: rgb(56, 167, 187) !important;
+
+}
+.libre-dark-blue{
+    background: rgb(40,117,131) !important;
+}
+.libre-dark-blue-border{
+    border-color: rgb(40,117,131) !important;
+}
+.infoSection{
+    padding-left: 10px;
+}
+
+.row .tagrow{
+    float: left; 
+    margin-left: 0px;
+}
+
+.contentDiv{
+content: block;
+}
+
+
+
+.tagDiv{
+    content: block;
+    height: 14px;
+}
+
+.parallax-container {
+    height: 300px;
+}
+.fa.normal.fa-facebook{
+    background: transparent;
+}
+.fa.normal{
+    padding: 0;
+}
+
+.fa{
+    padding: 20px;
+    width:100%;
+    font-size: 80px;
+    text-align: center;
+    text-decoration: none;
+    line-height: 50px;
+    display:inline-block;
+    vertical-align: bottom;
+    border-radius: 0;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    /* ...and now for the proper property */
+    transition:.5s;
+  
+}
+
+
+
+  
+.socialmedia a {  
+    color: white;
+    margin: auto;
+    text-align: center;
+    vertical-align: middle;
+}
+.cardImage{
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+
+}
+.cardImage:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transform: scale(1.05);
+}
+.parallaximage {
+    background-image: linear-gradient(to right, rgb(246,144,50) ,rgb(246,144,50), rgb(246,144,50), rgb(56, 167, 187));
+}
+  
+.categoriesText{
+    text-transform: uppercase; 
+    letter-spacing: 0.7px;
+    color: rgb(246,144,50);
+}
+.socialmedia{
+    position: fixed;
+    background: blue;
+    width:50px;
+    top: 20% !important;
+    right: 0 !important;
+    z-index: 999;
+    text-align:center;
+}
+
+@media only screen and (min-width: 601px) {
+.container {
+    width: 90%;
+}
+}
+@media only screen and (min-width: 993px) {
+.container {
+    width: 95%;
+}
+}
+  
+
+
+
+
+
+/* Facebook */
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+.fa-facebook:hover{
+    background: #9ab1e2;
+    color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.socialbox {
+    display: inline-block;
+    width: 3em;
+    height: 3em;
+    margin-right: 1em;
+}
+/* Twitter */
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+.fa-twitter:hover {
+    background: #9be3f7;
+    color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+.fa-gitlab{
+    background:orange;
+    color:white;
+}
+.fa-gitlab:hover{
+    background:#ffbe56;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+.raised-box{
+    margin-top:-40px;
+    background: white;
+    -webkit-box-shadow: 0 0 10px rgb(0,0,0);
+    -moz-box-shadow: 0 0 10px rgb(0,0,0);
+    padding:40px;
+    border-radius: 4px;  
+    margin-bottom:0px;  
+}
+.fa-linkedin{
+    background:#0077B5;
+    color: white;
+}
+.fa-linkedin:hover{
+    background:#5aa6ce;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+.shortCardImg {
+    width: 170px;
+    height: 130px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+  }
+  
+  /* Set the image to fill its parent and make transparent */
+  .shortCardImg img {
+    height:100%;
+    /* IE 8 */
+    
+  }
+
+.fa-github {
+    background: black;
+    color: white;
+}
+.fa-github:hover{
+    background: #848484;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}

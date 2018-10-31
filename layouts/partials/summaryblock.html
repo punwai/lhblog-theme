@@ -1,0 +1,21 @@
+<div class ="section row">
+    <h5 style="font-weight: 700">{{ .Title }}</h5>
+    <div class="tagDiv">
+        <h6 class="grey-text" content="content: inline">Author</h6>
+        {{/*  {{ $taxo := "tags" }} <!-- Use the plural form here -->
+        {{ range .Param $taxo }}
+            {{ $name := . }}
+            {{ with $.Site.GetPage (printf "/%s/%s" $taxo $name) }}
+            <a href="{{ .Permalink }}">
+                <span class="badge new grey darken-3 tagSpan" style="float: left;" data-badge-caption="{{$name}}">
+                </span>
+            </a>
+            {{ end }}
+        {{ end }}  */}}
+    </div>
+    <div class="contentDiv">
+        <p>{{ .Summary }}</p>
+        <a class="waves-effect waves-light btn" href="{{ .Permalink }}"><i class="tiny right material-icons">more</i>Read More</a>
+    </div>
+
+</div>

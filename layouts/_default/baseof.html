@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    {{- partial "head.html" . -}}
+    <body>
+        <div class="socialmedia">
+            {{ with .Site.Params.Linkedin }}
+                <a href="{{.}}"><i class="fa fa-linkedin fa-lg"></i></a>
+            {{ end }}
+            {{ with .Site.Params.Github }}
+                <a href="{{.}}"><i class="fa fa-github fa-lg"></i></a>
+            {{ end }}
+            {{ with .Site.Params.Twitter }}
+              <a href="{{.}}"><i class="fa fa-twitter fa-lg"></i></a>
+            {{ end }}
+            {{ with .Site.Params.Gitlab }}
+                <a href="{{.}}"><i class="fa fa-gitlab fa-lg"></i></a>
+            {{ end }}
+        </div>
+        
+        {{- partial "header.html" . -}}
+        <div id="content">
+        {{- block "main" . }}{{- end }}
+        </div>
+        
+        {{- partial "footer.html" . -}}
+
+        <!-- Compiled and minified JavaScript -->
+        <script src='{{ "js/test.js" | absURL}}'></script>
+    </body>
+</html>

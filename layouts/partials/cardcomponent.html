@@ -1,0 +1,36 @@
+
+<div class="col s12 m6 l6 xl4">
+    <div class="card" style="border-radius:1px;">
+        
+        <a href="{{.Permalink}}">
+            <div class="card-image waves-effect waves-block waves-light libre-blue cardImage" style="border-top-left-radius:1px; border-top-right-radius: 1px;height:250px">
+                {{ with .Params.Image }}
+                    <img class="activator" src="{{ . | absURL }}" style="height:100%; width: auto;">
+                {{end}}
+            </div>
+        </a>
+        <div class="card-content" style="height:270px;">
+            {{ $taxo := "categories" }}                  
+            {{ range .Param $taxo }}
+                {{ $name := . }}
+                {{ with $.Site.GetPage (printf "/%s/%s" $taxo $name) }}
+                <a class="categoriesText" href="{{ .Permalink }}">
+                    {{$name}}
+                </a>
+                {{ end }}
+            {{ end }}
+            <span style="margin-bottom:0" class="card-title activator grey-text text-darken-4">{{.Title}}</span>
+            <div class="grey-text" style="font-size:14px;">
+                    <i class="material-icons" style="font-size: 14px;">brush</i> {{ .Params.Author }} &ensp; <span>{{ dateFormat "Jan 2 2006" .PublishDate }}</span>     
+            </div>
+    
+            <p style="margin-top:10px; font-size:14px;">{{ .Summary }} <a href="{{ .Permalink }}">Read More</a>
+            </p>
+            
+
+        </div>
+      
+
+    </div>
+            
+</div>

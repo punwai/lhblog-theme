@@ -1,0 +1,10 @@
+<div class="parallax-container">
+    <div class="parallax">
+        {{ with .Params.Image }}
+            <img style="width:100%;" src="{{ . | absURL }}">
+        {{ else }}
+            <div class="parallaximage" style="height:100%;"></div>
+        {{ end }}
+
+    </div>
+</div> 

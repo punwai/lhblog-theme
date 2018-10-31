@@ -1,13 +1,13 @@
 {{ define "main" }}
 
-<div class="carousel carousel-slider center" data-indicators="true" style="">
+<div class="carousel carousel-slider center" data-indicators="true" style="min-height:350px;">
     <script>
         $(document).ready(function(){
-            $('.carousel').carousel();
+            $('.carousel.carousel-slider').carousel({fullWidth: true});
 
             setInterval(function(){
                 $('.carousel').carousel("next");
-            }, 3000);
+            }, 3000); 
         });
     </script>
     {{ range .Site.Data.carousel }}

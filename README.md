@@ -13,6 +13,7 @@ A Blog theme for LibreHealth's Website (librehealth.io).
   - [Menus](#menus)
 - [Social Media](#social-media)
 - [Footer](#footer)
+- [ParallaxPhoto](#parallax-photo)
 
 ## Post
 ### Adding Post Image
@@ -43,14 +44,14 @@ The logo in the navbar has to specified in the params of the config file. Eg. IN
 
 ### Menus
 The Menus of the navbar is specified in the config file of the site. To add menus to the navbar, specify the menus under 
-[[menu.main]] in the config file. If the menu does not have any children, specify content in the following format.
+[[menu.main]] in the config file. If the menu does not have any children, specify content in the following format. The urls MUST BE ABSOLUTE.
 ```
 [[menu.main]]
     name = "Home"
-    url  = "../"
+    url  = "librehealth.io"
     weight = 1
 ```
-If the section does have children, specify the content in this format.
+If the section does have children, specify the content in this format. 
 ```
 [[menu.main]]
     name = "Projects"
@@ -82,6 +83,15 @@ The two things which are important about the footer is the copyright text and th
 These are specified in the params of the config file.
 
 ```
-copyrighttext = "2014 LibreHealth Copyright"
-footerabout = "LibreHealth is collaborative community for free & open source software projects in Health IT, and is a member project of Software Freedom Conservancy."
+[params]
+    copyrighttext = "2014 LibreHealth Copyright"
+    footerabout = "LibreHealth is collaborative community for free & open source software projects in Health IT, and is a member project of Software Freedom Conservancy."
+```
+
+## Parallax Photo
+On all blog posts, there will be a parallax which contains an image. To add the image to the parallax, specify the url of the image in the params of the config file. Specify by using the url RELATIVE to the static folder in the bannerimage parameter.
+
+```
+[params]
+    bannerimage = "bannerimage.png
 ```

@@ -2,18 +2,19 @@
 <html>
     {{- partial "head.html" . -}}
     <body>
+        
         <div class="socialmedia">
             {{ with .Site.Params.Linkedin }}
-                <a href="{{.}}"><i class="fa fa-linkedin fa-lg"></i></a>
+                <a class="check" href="{{.}}"><i class="fa fa-linkedin fa-lg"></i></a>
             {{ end }}
             {{ with .Site.Params.Github }}
-                <a href="{{.}}"><i class="fa fa-github fa-lg"></i></a>
+                <a class="check" href="{{.}}"><i class="fa fa-github fa-lg"></i></a>
             {{ end }}
             {{ with .Site.Params.Twitter }}
-              <a href="{{.}}"><i class="fa fa-twitter fa-lg"></i></a>
+              <a class="check" href="{{.}}"><i class="fa fa-twitter fa-lg"></i></a>
             {{ end }}
             {{ with .Site.Params.Gitlab }}
-                <a href="{{.}}"><i class="fa fa-gitlab fa-lg"></i></a>
+                <a class="check" href="{{.}}"><i class="fa fa-gitlab fa-lg"></i></a>
             {{ end }}
         </div>
         

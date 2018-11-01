@@ -1,11 +1,20 @@
 {{ define "main" }}
-    <div class="parallax-container">
-        <div class="parallax">
+<div class="parallax-container">
+    <div class="parallax">
+        {{ with .Site.Params.bannerimage }}
+            <div style='height:100%; background-image: url("{{ . | absURL }} ")'>
+        {{ else }}
             <div class="parallaximage" style="height:100%;">
-                <h1 style="text-align: center; padding-top: 40px; text-transform:uppercase; letter-spacing: 4px; font-weight:400; color:white; margin-top: 0px;"> Blog </h1>
-            </div>
+        {{ end }}
+            
+                <div class="container">
+                    <h1 class="white-text" style=" text-align: center; padding-top: 70px; text-transform:uppercase; letter-spacing: 4px; font-weight:400; margin-top: 0px;"> {{.Title}} </h1>
+
+                </div>
+            
         </div>
-    </div> 
+    </div>
+</div> 
 
 
     <div class="container">
@@ -13,17 +22,17 @@
         <div class="divider"></div>
         <div class="row">
             <br>
-            <div class="col s9" style="padding-right:20px;">
+            <div class="col s12 m8 l10" style="padding-right:20px;">
                 <div class="posts-container" >
                     <div class="row">
-                            {{ range first 5 .Pages }}
+                            {{ range .Pages }}
                             {{- partial "cardcomponent.html" . -}}
                             
                             {{end}}
                     </div>
                 </div>
             </div>
-            <div class="col s3">
+            <div class="col hide-on-small-only m4 l2" style="margin-right: -30px">
                 {{- partial "infobar.html" . -}}
                 
             </div>

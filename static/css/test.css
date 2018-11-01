@@ -39,7 +39,39 @@ span.customTag{
 content: block;
 }
 
+.socialmediabutton{
+    border-radius: 4px;
+    color: white;
+    text-align: center;
+    vertical-align: center;
+    padding-left: 16px;
+    padding-right: 16px;
+    text-transform: capitalize;
+}
+.socialmediabutton .fa{
+    top: -2px;
+    padding-left: 5px !important;
+    font-size: 23px;
+    position:relative; 
+  
+}
+.twitterbutton{
+    background: #1da1f2;
+}
+.googlebutton{
+    background: #dd4b39;
 
+}
+.facebookbutton{
+    background: #3B5998;
+}
+.linkedinbutton{
+    background: #0077B5;
+}
+
+.tumblrbutton{
+    background: #34526f;
+}
 
 .tagDiv{
     content: block;
@@ -49,20 +81,11 @@ content: block;
 .parallax-container {
     height: 300px;
 }
-.fa.normal.fa-facebook{
-    background: transparent;
-}
-.fa.normal{
-    padding: 0;
-}
-
-.fa{
+.check .fa{
     padding: 20px;
     width:100%;
-    font-size: 80px;
     text-align: center;
     text-decoration: none;
-    line-height: 50px;
     display:inline-block;
     vertical-align: bottom;
     border-radius: 0;
@@ -95,6 +118,16 @@ content: block;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     transform: scale(1.05);
 }
+.tagBadges{
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+
+}
+.tagBadges:hover{
+    transform: scale(1.2);
+}
 
   
 .categoriesText{
@@ -113,14 +146,24 @@ content: block;
 }
 
 @media only screen and (min-width: 601px) {
-.container .index-container {
-    width: 90%;
+    .container{
+        width: 80%;
+    }
+    .wapSingle{
+        padding-left:0; padding-right: 0;
+    }
 }
-}
+
 @media only screen and (min-width: 993px) {
-.container .index-container {
-    width: 95%;
-}
+    .container{
+        width: 80%; 
+        max-width: 3000px;
+    }
+    .wrapSingle{
+        padding-left:9%; padding-right: 9%;
+        max-width: 1600px;
+    }
+    .
 }
   
 
@@ -129,11 +172,11 @@ content: block;
 
 
 /* Facebook */
-.fa-facebook {
+.check .fa-facebook {
     background: #3B5998;
     color: white;
 }
-.fa-facebook:hover{
+.check .fa-facebook:hover{
     background: #9ab1e2;
     color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -145,24 +188,27 @@ content: block;
     margin-right: 1em;
 }
 /* Twitter */
-.fa-twitter {
+.check .fa-twitter {
     background: #55ACEE;
     color: white;
 }
-.fa-twitter:hover {
+.check .fa-twitter:hover {
     background: #9be3f7;
     color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
 }
-.fa-gitlab{
+.check .fa-gitlab{
     background:orange;
     color:white;
 }
-.fa-gitlab:hover{
+.check .fa-gitlab:hover{
     background:#ffbe56;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
+}
+.showcase-box{
+ 
 }
 .raised-box{
     margin-top:-40px;
@@ -173,11 +219,11 @@ content: block;
     border-radius: 4px;  
     margin-bottom:0px;  
 }
-.fa-linkedin{
+.check .fa-linkedin{
     background:#0077B5;
     color: white;
 }
-.fa-linkedin:hover{
+.check .fa-linkedin:hover{
     background:#5aa6ce;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
@@ -197,11 +243,11 @@ content: block;
     
   }
 
-.fa-github {
+.check .fa-github {
     background: black;
     color: white;
 }
-.fa-github:hover{
+.check .fa-github:hover{
     background: #848484;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 

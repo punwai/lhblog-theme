@@ -7,87 +7,98 @@
             {{ else }}
                 <div class="parallaximage" style="height:100%;">
             {{ end }}
-                <div class="container">
-                    <h1 class="white-text" style=" text-align: center; padding-top: 70px; text-transform:uppercase; letter-spacing: 4px; font-weight:400; margin-top: 0px;"> {{.Title}} </h1>
-                    <p class="grey-text text-lighten-3" style="text-align: center; text-transform:uppercase; letter-spacing: 4px; font-weight:400; color:white; margin-top: 0px;">By <span class="white-text" style="font-weight: 900">{{ .Params.Author }}</span> in {{ $taxo := "categories" }}                  
-                            {{ range .Param $taxo }}
-                                {{ $name := . }}
-                                {{ with $.Site.GetPage (printf "/%s/%s" $taxo $name) }}
-                                    
-                                   <span style="font-weight: 900" class="white-text">{{$name}}<span>
-                                    
-                                {{ end }}
-                            {{ end }}</p>
+                
+                    <div class="container">
+                        <h1 class="white-text" style=" text-align: center; padding-top: 70px; text-transform:uppercase; letter-spacing: 4px; font-weight:400; margin-top: 0px;"> {{.Title}} </h1>
+                        <p class="grey-text text-lighten-3" style="text-align: center; text-transform:uppercase; letter-spacing: 4px; font-weight:400; color:white; margin-top: 0px;">By <span class="white-text" style="font-weight: 900">{{ .Params.Author }}</span> in {{ $taxo := "categories" }}                  
+                                {{ range .Param $taxo }}
+                                    {{ $name := . }}
+                                    {{ with $.Site.GetPage (printf "/%s/%s" $taxo $name) }}
+                                        
+                                    <span style="font-weight: 900" class="white-text">{{$name}}<span>
+                                        
+                                    {{ end }}
+                                {{ end }}</p>
 
-                </div>
+                    </div>
+                
             </div>
         </div>
     </div> 
-
-    <div class="container raised-box" style="margin-top:-50px">
-        <div class="store">
-            <div class="posts-container" >             
-                {{ $taxo := "categories" }}                  
-                {{ range .Param $taxo }}
-                    {{ $name := . }}
-                    {{ with $.Site.GetPage (printf "/%s/%s" $taxo $name) }}
-                    <a class="categoriesText" href="{{ .Permalink }}">
-                        {{$name}}
-                    </a>
+    <div class=firstwrap style="text-align:center">
+        <div class="wrapSingle" style="display:inline-block">
+        <div class="container raised-box" style="margin-top:-50px; text-align: left;">
+            <div class="store">
+                <div class="posts-container" >             
+                    {{ $taxo := "categories" }}                  
+                    {{ range .Param $taxo }}
+                        {{ $name := . }}
+                        {{ with $.Site.GetPage (printf "/%s/%s" $taxo $name) }}
+                        <a class="categoriesText" href="{{ .Permalink }}">
+                            {{$name}}
+                        </a>
+                        {{ end }}
                     {{ end }}
-                {{ end }}
-                <h3 style="margin-top:5px;">
-                    <strong>{{.Title}}</strong>
-                </h3>
-                <p class="grey-text" style="margin-bottom: 0;"><i class="material-icons tiny">brush</i> {{.Params.Author}} &ensp; <span class="grey-text text-darken-2">{{ dateFormat "January 2 2006" .Params.Date}}</span></p>   
-                        
-                </p>
-                <div class="divider"></div>               
-                
-                <p class="flow-text">
-                    {{.Content}}
-                </p>
-                {{/*  <p class="grey-text">By {{.Params.Author}} on {{ dateFormat "January 2 2006" .Params.Date}}</p>  */}}
-                <div class="row" style="margin-left:0; margin-bottom:0">
-                        <p style="float: left; margin-bottom:0px;">Tags:{{ $taxo := "tags" }} <!-- Use the plural form here -->
-                            {{ range .Param $taxo }}
-                                {{ $name := . }}
-                                {{ with $.Site.GetPage (printf "/%s/%s" $taxo $name) }}
-                                <a href="{{ .Permalink }}">
-                                    <span class="badge new grey darken-3 tagSpan" style="" data-badge-caption="{{$name}}">
-                                    </span>
-                                </a>
+                    <h3 style="margin-top:5px;">
+                        <strong>{{.Title}}</strong>
+                    </h3>
+                    <p class="grey-text" style="margin-bottom: 0;"><i class="material-icons tiny">brush</i> {{.Params.Author}} &ensp; <span class="grey-text text-darken-2">{{ dateFormat "January 2 2006" .Params.Date}}</span></p>   
+                            
+                    </p>
+                    <div class="divider" ></div>               
+                    
+                    <p class="flow-text">
+                        {{.Content}}
+                    </p>
+                    <br>
+                    <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitterbutton socialmediabutton waves-effect waves-light btn" data-show-count="false">Tweet<i class="fa fa-twitter fa-lg"></i></a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                    <a href="https://plus.google.com/share?url={{.Permalink}}" class="googlebutton socialmediabutton waves-effect waves-light btn">Share<i class="fa fa-google-plus fa-lg"></i></a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u={{.Permalink}}" class="facebookbutton socialmediabutton waves-effect waves-light btn">Share<i class="fa fa-facebook fa-lg"></i></a>
+                    <a href="https://www.tumblr.com/share" class="tumblrbutton socialmediabutton waves-effect waves-light btn">Post<i class="fa fa-tumblr fa-lg"></i></a><script id="tumblr-js" async src="https://assets.tumblr.com/share-button.js"></script>
+                    
+                    <div class="divider" style="margin-top: 10px"></div>
+                    {{/*  <p class="grey-text">By {{.Params.Author}} on {{ dateFormat "January 2 2006" .Params.Date}}</p>  */}}
+                    <div class="row" style="margin-left:0; margin-bottom:0">
+                            <p style="float: left; margin-bottom:0px;">Tags:{{ $taxo := "tags" }} <!-- Use the plural form here -->
+                                {{ range .Param $taxo }}
+                                    {{ $name := . }}
+                                    {{ with $.Site.GetPage (printf "/%s/%s" $taxo $name) }}
+                                    <a href="{{ .Permalink }}">
+                                        <span class="badge new grey darken-3 tagSpan" style="" data-badge-caption="{{$name}}">
+                                        </span>
+                                    </a>
+                                    {{ end }}
                                 {{ end }}
-                            {{ end }}
-                    </div>
-                {{/*  <div class="divider"></div>
-                <h6><strong>Other Recent Posts:</strong></h6>
-                <div class="row" style="height: 180px; overflow:hidden">
-                    {{ range first 4 .Site.Pages }}
-                        <div class="col s12 m6 l4 xl3">
-                            <div style="height:50px;">
-                                <p style="font-size: 14px; font-weight: 700; margin-bottom: 0px;">{{ .Title }}</p>
-                                <p class="grey-text lighten-2" style="margin-top: 0; font-size: 12px;">
-                                    {{ .Params.Author}}
-                                </p>
-                                
-
-                            </div>
-                            <div class="shortCardImg">
-                            <a href="{{ .Permalink }}">
-                            {{ with .Params.Image }}
-                                <img src="{{ . | absURL }}" alt="" style="">
-                            {{else}}
-                                <div style="width:100%; height:100%;" class="libre-blue"></div>
-                            {{end}}
-                            </a>        
-                            </div>
                         </div>
-                    {{ end }}
-                </div>  */}}
+                    {{/*  <div class="divider"></div>
+                    <h6><strong>Other Recent Posts:</strong></h6>
+                    <div class="row" style="height: 180px; overflow:hidden">
+                        {{ range first 4 .Site.Pages }}
+                            <div class="col s12 m6 l4 xl3">
+                                <div style="height:50px;">
+                                    <p style="font-size: 14px; font-weight: 700; margin-bottom: 0px;">{{ .Title }}</p>
+                                    <p class="grey-text lighten-2" style="margin-top: 0; font-size: 12px;">
+                                        {{ .Params.Author}}
+                                    </p>
+                                    
+
+                                </div>
+                                <div class="shortCardImg">
+                                <a href="{{ .Permalink }}">
+                                {{ with .Params.Image }}
+                                    <img src="{{ . | absURL }}" alt="" style="">
+                                {{else}}
+                                    <div style="width:100%; height:100%;" class="libre-blue"></div>
+                                {{end}}
+                                </a>        
+                                </div>
+                            </div>
+                        {{ end }}
+                    </div>  */}}
+                </div>
             </div>
         </div>
-        
     </div>
+    </div> 
     <div style="height:60px;"></div>
 {{end}}

@@ -1,29 +1,35 @@
 <div class="container">
     <div class="infoSection">
-        <h6 style="">Tags</h6>
+        <h6 style="text-transform: uppercase; letter-spacing: 1.5px; font-weight: 450; ">Tags</h6>
     </div>
     <div class="divider"></div>
     <div class="infoSection">
-        <ul id="all-tags">
-                {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
-                    {{ with $.Site.GetPage (printf "/tags/%s" $name) }}
-                        <li>               <a href="{{ .Permalink }}">{{ $name }}</a>
-                        </li>
-                    {{ end }}
-                {{ end }}
-        </ul>
+        <div class="row" style="margin-left: 0;">
+                <ul id="all-tags">
+                        {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+                            {{ with $.Site.GetPage (printf "/tags/%s" $name) }}
+                                <a href="{{.Permalink}}">
+                                    <span class="grey darken-2 new badge tagBadges" style="float: left; margin-left: 0; margin-right: 10px; margin-bottom: 6px;"data-badge-caption="{{$name}}"></span>
+                                </a>
+                            {{ end }}
+                        {{ end }}
+                </ul>        
+        </div>
     </div>
-    <div class="infoSection">
-        <h6>Categories</h6>
+    <div class="infoSection" style="">
+        <h6 style="text-transform: uppercase; letter-spacing: 1.5px; font-weight: 450;">Categories</h6>
     </div>
-    <div class="divider"></div>
+    <div  class="divider"></div>
 
     <div class="infoSection">
         <ul id="all-tags">
             {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
                 {{ with $.Site.GetPage (printf "/categories/%s" $name) }}
-                    <li>               <a href="{{ .Permalink }}">{{ $name }}</a>
-                    </li>
+                <a href="{{.Permalink}}">
+                        <span class="new badge tagBadges" style="float: left; margin-left: 0; margin-right: 10px; margin-bottom: 6px;"data-badge-caption="{{$name}}"></span>
+
+                </a>
+
                 {{ end }}
             {{ end }}
         </ul>

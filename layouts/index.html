@@ -12,15 +12,15 @@
     </script>
     {{ range .Site.Data.carousel }}
     <div class="carousel-item center libre-blue">
-        <div class="container index-container" style=>
+        <div class="container" style="width:80% !important;">
             <div class="row" style="padding:30px;margin-bottom: 40px;">
-                <div class="col s12 m7 " style="">
+                <div class="col s12 l6" style="">
                     <div style="padding-left:5%; margin: auto 0">
                         <h3 style="font-weight:600; padding-top:0; letter-spacing: 1.5px; color: white;">{{.title}}</h1>
-                        <p style="font-weight:600; color: white;">{{ .description | safeHTML }}</p>            
+                        <p style="font-weight:600; font-size: 20px; color: white;">{{ .description | safeHTML }}</p>            
                     </div>
                 </div>
-                <div class="col s12 m5">
+                <div class="col s12 l6">
                     <img src="{{ .image }}" style="width:100%; height:auto;">
                 </div>
             </div>
@@ -33,20 +33,47 @@
     
           
 <div class="container" style="">
-    <h3 style="padding-left:0.5%">Recent Posts</h3>
-    <div class="divider"></div>
     <div class="row">
         <br>
-        <div class="col s12 m10" style="padding-right:20px;">
+        
+        <div class="col s12 m8 l10" style="padding-right:20px;" >
+            <br>
+            {{ $sitevar := .Site }}
+            {{ with .Site.Params.Showcase }}
+            {{ with $sitevar.GetPage . }}
+            <div class="row" style="height:100%;">
+                <div class="col s12 m12 l6 xl5" style="height:100%; overflow: hidden;">
+                    <a href="{{.Permalink}}">
+                        <img class="hoverable" style="max-height: 300px; margin-bottom:0;padding-bottom:0;" src="{{ .Params.image }}" alt="">
+                    </a>
+                </div>
+                <div class="col s12 m12 l6 xl7 " style="padding-left: 20px; height: 100%;">
+                        <h3 style="margin-bottom: 0;">{{ .Title }}</h3>
+                        <p style="margin-top: 5px; text-transform: uppercase; letter-spacing: 1px; font-weight:500;" class="grey-text">Written By <span style="font-weight: 600px;" class="grey-text text-darken-2">{{ .Params.Author }}</span> on <span style="font-weight: 600px;" class="grey-text text-darken-2">{{ dateFormat "Jan 2 2006" .PublishDate }}</span></p>
+                        <p>{{.Summary}}</p>
+                        <a href="{{ .Permalink}}"class="hoverable waves-effect waves-light btn orange">Read More</a>
+    
+                </div>
+            </div>
+            
+            {{ end }}
+            {{ end }}
+
+
+            <br>
+        
+            <h4 style="padding-left:0.8%; font-weight: 400px">Recent Posts</h4>
+            <div class="divider"></div>
+
             <div class="posts-container" >                
-                {{ range first 5 .Pages }}
+                {{ range .Pages }}
             
                     {{- partial "cardcomponent.html" . -}}
                     
                 {{end}}
             </div>
         </div>
-        <div class="col hide-on-small-only m2">
+        <div class="col hide-on-small-only m4 l2" style="margin-right: -35px">
             {{- partial "infobar.html" . -}}
         </div>
     </div>

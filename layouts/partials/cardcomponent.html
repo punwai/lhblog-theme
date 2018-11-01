@@ -1,6 +1,6 @@
 
-<div class="col s12 m6 l6 xl4">
-    <div class="card" style="border-radius:1px;">
+<div class="col s12 m12 l6 xl4">
+    <div class="card" style="max-width: 380px; border-radius:1px;">
         
         <a href="{{.Permalink}}">
             <div class="card-image waves-effect waves-block waves-light libre-blue cardImage" style="border-top-left-radius:1px; border-top-right-radius: 1px;height:250px">
@@ -9,7 +9,7 @@
                 {{end}}
             </div>
         </a>
-        <div class="card-content" style="height:270px;">
+        <div class="card-content" style="height:270px; overflow: hidden;">
             {{ $taxo := "categories" }}                  
             {{ range .Param $taxo }}
                 {{ $name := . }}

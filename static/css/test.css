@@ -95,9 +95,7 @@ content: block;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     transform: scale(1.05);
 }
-.parallaximage {
-    background-image: linear-gradient(to right, rgb(246,144,50) ,rgb(246,144,50), rgb(246,144,50), rgb(56, 167, 187));
-}
+
   
 .categoriesText{
     text-transform: uppercase; 
@@ -115,12 +113,12 @@ content: block;
 }
 
 @media only screen and (min-width: 601px) {
-.container {
+.container .index-container {
     width: 90%;
 }
 }
 @media only screen and (min-width: 993px) {
-.container {
+.container .index-container {
     width: 95%;
 }
 }

@@ -1,14 +1,12 @@
 {{ define "main" }}
     <div class="parallax-container">
         <div class="parallax">
-            {{ with .Params.Image }}
-                <img style="width:100%;" src="{{ . | absURL }}">
-            {{ else }}
-                <div class="parallaximage" style="height:100%;"></div>
-            {{ end }}
-    
+            <div class="parallaximage" style="height:100%;">
+                <h1 style="text-align: center; padding-top: 40px; text-transform:uppercase; letter-spacing: 4px; font-weight:400; color:white; margin-top: 0px;"> Blog </h1>
+            </div>
         </div>
     </div> 
+
 
     <div class="container">
         <h3>{{.Title}}</h3>

@@ -12,7 +12,7 @@
     </script>
     {{ range .Site.Data.carousel }}
     <div class="carousel-item center libre-blue">
-        <div class="container" style=>
+        <div class="container index-container" style=>
             <div class="row" style="padding:30px;margin-bottom: 40px;">
                 <div class="col s12 m7 " style="">
                     <div style="padding-left:5%; margin: auto 0">
@@ -21,7 +21,7 @@
                     </div>
                 </div>
                 <div class="col s12 m5">
-                    <img src="{{.image}}" style="width:100%; height:auto;">
+                    <img src="{{ .image }}" style="width:100%; height:auto;">
                 </div>
             </div>
         </div>

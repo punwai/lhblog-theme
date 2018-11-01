@@ -14,7 +14,7 @@
                 " src="{{ .Site.Params.Logo | absURL }}" alt="{{ .Site.Title }}">
             </a>
             <ul id="nav-mobile" class="right hide-on-med-and-down grey-text">
-                <li><a href="collapsible.html">JavaScript</a></li>
+                {{ $base := .Site.BaseURL }}
                 {{ $currentNode := . }} {{ range .Site.Menus.main }} {{ if .HasChildren }}
                     <li><a class=" grey-text text-darken-2 dropdown-button" href="#!" style="text-transform:uppercase; font-size:14px; font-weight:600" data-activates="dropdown{{.Name}}">{{.Name}}<i class="material-icons right"></i></a></li>
                     <ul id="dropdown{{.Name}}" class="dropdown-content" >

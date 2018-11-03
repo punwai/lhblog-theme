@@ -1,35 +1,36 @@
 
 
 <div class="navbar-fixed">
-    <nav>
-        <div class="nav-wrapper white grey-text">
+    <nav style="box-shadow: none;">
+        <div class="nav-wrapper white grey-text" style="padding-left: 14%; padding-bottom: px; padding-right:14%">
             <a href="/" class="brand-logo black-text">
-                <img style="height:45px;
+                <img style="height:50px;
                 max-height:100%;
                 vertical-align: middle;
                 margin-right:15px;
                 margin-left:20px;
-                margin-bottom:5px;
-                margin-left:50px;
+                margin-top:0px;
                 " src="{{ .Site.Params.Logo | absURL }}" alt="{{ .Site.Title }}">
             </a>
             <a href="#" data-activates="mobile-demo" class="grey-text button-collapse"><i class="material-icons">menu</i></a>
             <ul id="nav-mobile" class="right hide-on-med-and-down grey-text">
                 {{ $base := .Site.BaseURL }}
                 {{ $currentNode := . }} {{ range .Site.Menus.main }} {{ if .HasChildren }}
-                    <li><a class=" grey-text text-darken-2 dropdown-button" href="#!" style="text-transform:uppercase; font-size:14px; font-weight:600" data-activates="dropdown{{.Name}}">{{.Name}}<i class="grey-text text-darken-3 material-icons right">arrow_drop_down</i></a></li>
+                    <li><a class=" grey-text text-darken-2 dropdown-button customHighlight" href="#!" style="text-transform:uppercase; text-decoration: underline; font-size:14px; font-weight:600" data-activates="dropdown{{.Name}}">{{.Name}}<i class="grey-text text-darken-3 material-icons right">arrow_drop_down</i></a></li>
                     <ul id="dropdown{{.Name}}" class="dropdown-content" >
                         {{ range .Children }}
-                            <li>
-                                <a href="{{ .URL }}" class="grey-text text-darken-2" style="text-transform:uppercase; font-size:14px; font-weight:600">
+                            <li style="min-height: 30px; border-bottom: 1px #dddddd solid;">
+                                <a href="{{ .URL }}" class="grey-text" style="font-weight: 400; text-transform:uppercase; font-size:12px; letter-spacing: 1px; padding-top:7px; padding-bottom: 8px;">
                                     {{/*  <i class="{{ .Pre }}" aria-hidden="true"> </i>  */}}
-                                    <i class="{{ .Pre }} tiny" style="margin-top: 0; padding: 0; height:10px;" aria-hidden="true"> </i> {{ .Name }} </a> 
+                                    <i class="{{ .Pre }} tiny" style="margin-top: 0; padding: 0; height:10px; margin-right: 5px;" aria-hidden="true"> </i> {{ .Name }} </a>
+ 
                             </li>
+                            <div class="divider"></div>
                         {{ end }}
                         </ul>
                     {{else}}
                         <li>
-                            <a class="grey-text text-darken-2" style="text-transform:uppercase; font-size:14px; font-weight:600" href="{{.URL }}">
+                            <a class="grey-text text-darken-2 customHighlight" style="text-decoration: underline; text-transform:uppercase; font-size:14px; font-weight:600" href="{{.URL }}">
                             <span>{{ .Name }}</span>
                         </a> 
                         </li>

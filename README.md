@@ -24,7 +24,8 @@ This post image will be used on the index page and as a parallax.
 
 ### Taxonomy
 The two supported taxonomies are categories and tags. Add them to the post's front matter. Example.
-```
+```ls
+
 ---
 title: "LibreHealth-EHR"
 date: 2018-10-26T12:39:41+07:00

@@ -1,5 +1,5 @@
 {{ define "main" }}
-
+{{ if .Site.Params.carouselon }}
 <div class="carousel carousel-slider center" data-indicators="true" style="min-height:350px;">
     <script>
         $(document).ready(function(){
@@ -12,7 +12,7 @@
     </script>
     {{ range .Site.Data.carousel }}
     <div class="carousel-item center libre-blue">
-        <div class="container" style="width:80% !important;">
+        <div class="container" style="width:90% !important; max-width: 99999px !important;">
             <div class="row" style="padding:30px;margin-bottom: 40px;">
                 <div class="col s12 l6" style="">
                     <div style="padding-left:5%; margin: auto 0">
@@ -28,10 +28,33 @@
     </div>
     {{ end }}
 </div>
+{{ else }}
+<div class="parallax-container">
+    <div class="parallax">
+        {{ with .Site.Params.bannerimage }}
+            <div style='height:100%; background-image: url("{{ . | absURL }} ")'>
+        {{ else }}
+            <div class="parallaximage" style="height:100%;">
+        {{ end }}
+            
+                <div class="container">
+                    <h1 class="white-text" style=" text-align: center; padding-top: 70px; text-transform:uppercase; letter-spacing: 4px; font-weight:400; margin-top: 0px;"> Blog </h1>
+                    <p class="grey-text text-lighten-3" style="font-size: 20px; text-align: center; text-transform:uppercase; letter-spacing: 4px; font-weight:400; color:white; margin-top: 0px;">
+                        {{ .Site.Params.blogdescription }}
+                    </p>
+
+                </div>
+            
+        </div>
+    </div>
+</div> 
+{{ end }}
+
+
 
 
     
-          
+
 <div class="container" style="">
     <div class="row">
         <br>

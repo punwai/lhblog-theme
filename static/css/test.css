@@ -7,6 +7,17 @@ span.customTag{
     border-radius: 5px !important;
 
 }
+.customHighlight{
+    -o-transition:.3s;
+    -ms-transition:.3s;
+    -moz-transition:.3s;
+    -webkit-transition:.3s;
+}
+
+.customHighlight:hover{
+    background: rgba(56, 167, 187, 0.5) !important;
+    
+}
 .libre-orange{
     background: rgb(246,144,50) !important;
 }
@@ -14,7 +25,7 @@ span.customTag{
     border-color: rgb(246,144,50) !important;
 }
 .libre-blue{
-    background: rgb(56, 167, 187) !important;
+    background: rgba(56, 167, 187, 0.9) !important;
 }
 .libre-blue-border{
     border-color: rgb(56, 167, 187) !important;
@@ -40,6 +51,11 @@ content: block;
 }
 
 .socialmediabutton{
+    -o-transition:.3s;
+    -ms-transition:.3s;
+    -moz-transition:.3s;
+    -webkit-transition:.3s;
+
     border-radius: 4px;
     color: white;
     text-align: center;
@@ -47,6 +63,9 @@ content: block;
     padding-left: 16px;
     padding-right: 16px;
     text-transform: capitalize;
+}
+.socialmediabutton:hover{
+    margin-top: -8px;
 }
 .socialmediabutton .fa{
     top: -2px;

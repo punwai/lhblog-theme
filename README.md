@@ -5,9 +5,11 @@ A Blog theme for LibreHealth's Website (librehealth.io).
 
 ## Context
 - [Post](#post) 
-  - [Adding Post Image](#adding-post-image) 
+  - [Adding Post Image](#adding-post-image)
+  - [Taxonomy](#taxonomy) 
 - [Index Page](#index-page)
   - [Carousel](#carousel)
+  - [Showcase](#showcase)
 - [Navbar](#navbar)
   - [Logo](#logo)
   - [Menus](#menus)
@@ -19,6 +21,17 @@ A Blog theme for LibreHealth's Website (librehealth.io).
 ### Adding Post Image
 To add an image to a the post, add the image to the static folder of the site and specify the directory of the image **RELATIVE TO THE STATIC FOLDER**. 
 This post image will be used on the index page and as a parallax.
+
+### Taxonomy
+The two supported taxonomies are categories and tags. Add them to the post's front matter. Example.
+```
+---
+title: "LibreHealth-EHR"
+date: 2018-10-26T12:39:41+07:00
+tags: ["fdf", "fede", "djfkjkd"]
+categories: ["gaming",'hello']
+---
+```
 
 ## Index Page
 ### Carousel
@@ -33,6 +46,10 @@ title: "LibreHealth EHR"
 description:
     The LibreHealth EHR application is a clinically-focused electronic health record (EHR) system designed to be both easy to use "out of the box" and also customizable for use in a variety of health care settings.
 image: "img/carousel/librehealth-EHR.png"`
+### Showcase
+To showcase a post, set showcase as its relative URL in the params of the site's config file.
+
+   ```showcase = "/posts/librehealth-radiology"```
 
 ## Navbar
 ### Logo

@@ -57,7 +57,6 @@
                     <a href="https://www.tumblr.com/share" class="tumblrbutton socialmediabutton waves-effect waves-light btn-flat">Post<i class="fa fa-tumblr fa-lg"></i></a><script id="tumblr-js" async src="https://assets.tumblr.com/share-button.js"></script>
                     
                     <div class="divider" style="margin-top: 10px"></div>
-                    {{/*  <p class="grey-text">By {{.Params.Author}} on {{ dateFormat "January 2 2006" .Params.Date}}</p>  */}}
                     <div class="row" style="margin-left:0; margin-bottom:0">
                             <p style="float: left; margin-bottom:0px;">Tags:{{ $taxo := "tags" }} <!-- Use the plural form here -->
                                 {{ range .Param $taxo }}
@@ -70,31 +69,6 @@
                                     {{ end }}
                                 {{ end }}
                         </div>
-                    {{/*  <div class="divider"></div>
-                    <h6><strong>Other Recent Posts:</strong></h6>
-                    <div class="row" style="height: 180px; overflow:hidden">
-                        {{ range first 4 .Site.Pages }}
-                            <div class="col s12 m6 l4 xl3">
-                                <div style="height:50px;">
-                                    <p style="font-size: 14px; font-weight: 700; margin-bottom: 0px;">{{ .Title }}</p>
-                                    <p class="grey-text lighten-2" style="margin-top: 0; font-size: 12px;">
-                                        {{ .Params.Author}}
-                                    </p>
-                                    
-
-                                </div>
-                                <div class="shortCardImg">
-                                <a href="{{ .Permalink }}">
-                                {{ with .Params.Image }}
-                                    <img src="{{ . | absURL }}" alt="" style="">
-                                {{else}}
-                                    <div style="width:100%; height:100%;" class="libre-blue"></div>
-                                {{end}}
-                                </a>        
-                                </div>
-                            </div>
-                        {{ end }}
-                    </div>  */}}
                 </div>
             </div>
         </div>

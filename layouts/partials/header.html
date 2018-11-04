@@ -47,29 +47,6 @@
     </nav>
 </div>
 
-<!-- <ul class="side-nav" id="mobile-demo">
-    {{ $base := .Site.BaseURL }}
-    {{ $currentNode := . }} {{ range .Site.Menus.main }} {{ if .HasChildren }}
-        <li><a class=" grey-text text-darken-2 dropdown-button" href="#!" style="text-transform:uppercase; font-size:14px; font-weight:600" data-activates="dropdownsidenav{{.Name}}">{{.Name}}<i class="grey-text text-darken-3 material-icons right">arrow_drop_down</i></a></li>
-        <ul id="dropdownsidenav{{.Name}}" class="dropdown-content" >
-            {{ range .Children }}
-                <li>
-                    <a href="{{ .URL }}" class="grey-text text-darken-2" style="text-transform:uppercase; font-size:14px; font-weight:600">
-                        {{/*  <i class="{{ .Pre }}" aria-hidden="true"> </i>  */}}
-                        <i class="{{ .Pre }} tiny" style="margin-top: 0; padding: 0; height:10px;" aria-hidden="true"> </i> {{ .Name }} </a> 
-                </li>
-            {{ end }}
-            </ul>
-        {{else}}
-            <li>
-                <a class="grey-text text-darken-2" style="text-transform:uppercase; font-size:14px; font-weight:600" href="{{.URL }}">
-                <span>{{ .Name }}</span>
-            </a> 
-            </li>
-        {{end}}
-    {{ end }}
-  </ul> -->
-
   <ul class="side-nav " id="mobile-demo">
       <ul class="collapsible">
 
@@ -81,7 +58,6 @@
                 {{ range .Children }}
                     <div style="display:block;">
                         <a href="{{ .URL }}" class="grey-text text-darken-2" style="text-transform:uppercase; font-size:14px; font-weight:600">
-                            {{/*  <i class="{{ .Pre }}" aria-hidden="true"> </i>  */}}
                             <i class="{{ .Pre }} tiny" style="margin-top: 0; padding: 0; height:10px;" aria-hidden="true"> </i> {{ .Name }} </a> 
                     </div>
                     

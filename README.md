@@ -19,7 +19,7 @@ A Blog theme for LibreHealth's Website (librehealth.io).
 - [Social Media](#social-media)
 - [Footer](#footer)
 - [Parallax](#parallax)
-- [Site Description](#site-description)
+- [Open Graph](#open-graph)
 
 ## Post
 ### Example Front Matter
@@ -165,9 +165,15 @@ On all blog posts, there will be a parallax which contains an image. To add the 
 ```
 
 
-## Site Description
+## Open Graph
 When the blog will be shared, there will be a description of the website, to set this, change the siteDescription parameter. of the blog config
 ```
 [params]
     siteDescription = "The Blog of LibreHealth. Read new stories, follow our project"
 ```
+To set the default image shown on the website, set shareLogo in the param to the relative of the image (from the static folder)
+```
+[params]
+    shareLogo = "share-logo.png" 
+```
+

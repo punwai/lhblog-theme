@@ -34,8 +34,6 @@ crossorigin="anonymous"></script>
     {{ else }}
         <meta property="og:image" content="{{ .Site.Params.Logo | absURL }}" />
     {{ end }}
-    <meta property="article:published_time" content='{{ dateFormat "Jan 2 2006" .PublishDate }}' />
-    <meta property="article:author" content='{{ .Author }}'>
     {{ $taxo := "categories" }} <!-- Use the plural form here -->
     {{ range .Param $taxo }}
         {{ $name := . }}
@@ -47,6 +45,6 @@ crossorigin="anonymous"></script>
 {{ else }}
     <meta property="og:title" content="{{ .Site.Title }} | Blog" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="{{ .Site.Params.Logo | absURL }}" />
+    <meta property="og:image" content="{{ .Site.Params.sharelogo | absURL }}" />
     
 {{ end }}

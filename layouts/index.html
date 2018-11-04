@@ -74,7 +74,14 @@
                 <div class="col s12 m12 l6 xl7 " style="padding-left: 20px; height: 100%;">
                         <h3 style="margin-bottom: 0;">{{ .Title }}</h3>
                         <p style="margin-top: 5px; text-transform: uppercase; letter-spacing: 1px; font-weight:500;" class="grey-text">Written By <span style="font-weight: 600px;" class="grey-text text-darken-2">{{ .Params.Author }}</span> on <span style="font-weight: 600px;" class="grey-text text-darken-2">{{ dateFormat "Jan 2 2006" .PublishDate }}</span></p>
-                        <p>{{.Summary}}</p>
+                        <p>
+                            {{ with .Params.Description }}
+                            {{.}}
+                            {{ else }}
+                            {{.Summary}}
+                            {{ end}}
+
+                        </p>
                         <a href="{{ .Permalink}}"class="hoverable waves-effect waves-light btn orange">Read More</a>
     
                 </div>

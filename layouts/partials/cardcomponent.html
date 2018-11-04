@@ -24,7 +24,13 @@
                     <i class="material-icons" style="font-size: 14px;">brush</i> {{ .Params.Author }} &ensp; <span>{{ dateFormat "Jan 2 2006" .PublishDate }}</span>     
             </div>
     
-            <p style="margin-top:10px; font-size:14px;">{{ .Summary }} <a href="{{ .Permalink }}">Read More</a>
+            <p style="margin-top:10px; font-size:14px;">
+                {{ with .Params.Description }}
+                {{ . }}
+                {{ else }}
+                {{ .Summary }} 
+                {{ end }}
+                <a href="{{ .Permalink }}">Read More</a>
             </p>
             
 

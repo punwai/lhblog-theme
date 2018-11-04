@@ -7,7 +7,7 @@ $(document).ready(function(){
   $('.carousel.carousel-slider').carousel(
   );
   $(".button-collapse").sideNav();
-
+  $('.collapsible').collapsible();
 
   $('.dropdown-button').dropdown({
     constrainWidth: false, // Does not change width of dropdown to that of the activator

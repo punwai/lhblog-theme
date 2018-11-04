@@ -32,11 +32,11 @@
 <div class="parallax-container">
     <div class="parallax">
         {{ with .Site.Params.bannerimage }}
-            <div style='height:100%; background-image: url("{{ . | absURL }} ")'>
+            <div style='background-size: contain; height:100%; background-image: url("{{ . | absURL }} ")'>
         {{ else }}
             <div class="parallaximage" style="height:100%;">
         {{ end }}
-            
+            <span>
                 <div class="container">
                     <h1 class="white-text" style=" text-align: center; padding-top: 70px; text-transform:uppercase; letter-spacing: 4px; font-weight:400; margin-top: 0px;"> Blog </h1>
                     <p class="grey-text text-lighten-3" style="font-size: 20px; text-align: center; text-transform:uppercase; letter-spacing: 4px; font-weight:400; color:white; margin-top: 0px;">
@@ -44,6 +44,7 @@
                     </p>
 
                 </div>
+            <span> 
             
         </div>
     </div>

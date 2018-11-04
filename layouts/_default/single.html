@@ -3,7 +3,7 @@
     <div class="parallax-container">
         <div class="parallax">
             {{ with .Site.Params.bannerimage }}
-                <div style='height:100%; background-image: url("{{ . | absURL }} ")'>
+                <div style='background-size: contain; height:100%; background-image: url("{{ . | absURL }} ")'>
             {{ else }}
                 <div class="parallaximage" style="height:100%;">
             {{ end }}

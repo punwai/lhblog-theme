@@ -6,6 +6,7 @@ $(document).ready(function(){
   $('.slider').slider();
   $('.carousel.carousel-slider').carousel(
   );
+  $(".button-collapse").sideNav();
 
 
   $('.dropdown-button').dropdown({

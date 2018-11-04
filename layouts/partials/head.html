@@ -18,3 +18,35 @@ integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
 crossorigin="anonymous"></script>
 {{/*  <script src='{{ "js/materialize.min.js" | absURL }}'></script>  */}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+
+
+{{ if .IsPage }}
+    <meta property="og:title" content="{{ .Title }}" />
+    <meta property="og:type" content="article" />
+    {{ with .Params.Description }}
+        <meta property="og:description" content="{{.}}" />
+    {{ else }}
+        <meta property="og:description" content="{{ .Summary }}" />
+    {{ end }}
+    {{ with .Params.Image }}
+    <meta property="og:image" content="{{ . | absURL }}" />
+    {{ else }}
+        <meta property="og:image" content="{{ .Site.Params.Logo | absURL }}" />
+    {{ end }}
+    <meta property="article:published_time" content='{{ dateFormat "Jan 2 2006" .PublishDate }}' />
+    <meta property="article:author" content='{{ .Author }}'>
+    {{ $taxo := "categories" }} <!-- Use the plural form here -->
+    {{ range .Param $taxo }}
+        {{ $name := . }}
+        {{ with $.Site.GetPage (printf "/%s/%s" $taxo $name) }}
+            <meta property="article:tag" content='{{$name}}'/>
+        {{ end }}
+    {{ end }}
+
+{{ else }}
+    <meta property="og:title" content="{{ .Site.Title }} | Blog" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="{{ .Site.Params.Logo | absURL }}" />
+    
+{{ end }}
